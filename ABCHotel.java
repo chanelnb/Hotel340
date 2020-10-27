@@ -1,6 +1,6 @@
 package abchotel;
 /**
- * last updated 10/01/20
+ * last updated 10/24/20
  * @author Sogol 
  * hotel management system
  */
@@ -35,44 +35,75 @@ public class ABCHotel extends Application{
         //email label and text field
         Label emailLabel = new Label("Email");
         TextField emailTextField = new TextField();
+        emailTextField.getText();
         
         //password label and text field
         Label passLabel = new Label("Password");
         final PasswordField pass = new PasswordField();
+        pass.getText();
         
         //password confirmation label and text field
         Label passConfLabel = new Label("Confirm Password");
         final PasswordField confirmPass = new PasswordField();
+        confirmPass.getText();
         
         //name label and text field
         Label nameLabel = new Label("What is your name?");
         TextField nameTextField = new TextField();        
+        nameTextField.getText();
         
         //number label and text field
         Label numberLabel = new Label("What is your phone number?");
         TextField numberTextField = new TextField();    
+        numberTextField.getText();
         
         registerButton = new Button("Register");
 
         final Text registerationText = new Text();
         vbox.setSpacing(8);
         vbox.setPadding(new Insets(10, 10, 10, 10));
-        vbox.getChildren().addAll(emailLabel, emailTextField, passLabel, pass, passConfLabel, confirmPass, nameLabel, nameTextField, numberLabel, numberTextField, registerButton, registerationText);
+        vbox.getChildren().addAll(emailLabel, emailTextField, passLabel, pass, 
+                passConfLabel, confirmPass, nameLabel, nameTextField, numberLabel, 
+                numberTextField, registerButton, registerationText);
         
-        registerButton.setOnAction(e -> {
-            if(primaryStage != null)
-                primaryStage.requestFocus();
-                registerationText.setFill(Color.GREEN);
-                registerationText.setText("Your Account Was Successfully Created");
-            });
         
+//        registerButton.setOnAction(e -> {
+//            if(primaryStage != null)
+//                primaryStage.requestFocus();
+//                registerationText.setFill(Color.GREEN);
+//                registerationText.setText("success");
+//            }); 
+
+//        registerButton.setOnAction(e -> {
+//            if(emailTextField.getText().isEmpty()|| pass.getText().isEmpty() || 
+//                    confirmPass.getText().isEmpty() || nameTextField.getText().isEmpty()
+//                    || numberTextField.getText().isEmpty()){
+//                emailLabel.setText("Registration form is not complete!");
+//            }
+//            else{
+//                emailLabel.setText("Your Account Was Successfully Created");
+//            }
+//            
+//        });
+        
+
+
         Scene scene = new Scene(vbox, 400, 400);
         
         primaryStage.setTitle("Registration"); 
         primaryStage.setScene(scene);
         primaryStage.show();
     }
-     
+//         private boolean validationForEnteredData(){
+//        if(emailTextField.getText().isEmpty() || pass.getText().isEmpty() || 
+//                    confirmPass.getText().isEmpty() || nameTextField.getText().isEmpty()
+//                    || numberTextField.getText().isEmpty()){
+//                emailLabel.setText("Registration form is not complete!");
+//            }
+//            else{
+//                emailLabel.setText("Your Account Was Successfully Created");
+//            }
+//    }
     /**
      * @param args the command line arguments
      */
