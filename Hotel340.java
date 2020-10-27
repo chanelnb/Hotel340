@@ -8,7 +8,7 @@ package hotel340;
 
 /**
  *
- * @author cah
+ * @author chanel brown
  */
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -33,8 +33,7 @@ public class Hotel340 {
         
     }
     
-    static boolean searchRoom(Date stay, int rooms) {
-        boolean isAvailable = false;
+    static int searchRoom(Date stay, int rooms) {
         
         
         if (rooms == 1) {
@@ -51,7 +50,9 @@ public class Hotel340 {
             // else isAvaiable = true
         }
          
-     return isAvailable;   
+     return rooms;   
     }
     
 }
+
+//Testing this out for git push
