@@ -72,22 +72,22 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jLabel2" pref="150" max="32767" attributes="0"/>
                       <Component id="jLabel3" alignment="0" max="32767" attributes="0"/>
                       <Component id="jLabel4" alignment="0" max="32767" attributes="0"/>
                       <Component id="jLabel5" alignment="0" max="32767" attributes="0"/>
                       <Component id="jLabel6" alignment="0" max="32767" attributes="0"/>
                       <Component id="jLabel7" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jLabel8" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jLabel8" alignment="0" pref="150" max="32767" attributes="0"/>
                       <Component id="jLabel9" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="txtresid" min="-2" pref="150" max="-2" attributes="0"/>
                       <Component id="txtname" alignment="0" max="32767" attributes="0"/>
                       <Component id="txtaddress" alignment="0" max="32767" attributes="0"/>
                       <Component id="txtphone" alignment="0" max="32767" attributes="0"/>
-                      <Component id="txtroomtype" alignment="0" pref="255" max="32767" attributes="0"/>
+                      <Component id="txtcheckin" alignment="0" pref="255" max="32767" attributes="0"/>
+                      <Component id="txtcheckout" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtroomtype" alignment="0" max="32767" attributes="0"/>
                       <Component id="txtroomno" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace pref="69" max="32767" attributes="0"/>
@@ -97,12 +97,7 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="jLabel2" min="-2" pref="35" max="-2" attributes="0"/>
-                      <Component id="txtresid" min="-2" pref="35" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel3" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                       <Component id="txtname" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
@@ -118,9 +113,15 @@
                       <Component id="txtphone" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                  <Component id="jLabel6" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jLabel6" pref="35" max="32767" attributes="0"/>
+                      <Component id="txtcheckin" max="32767" attributes="0"/>
+                  </Group>
                   <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                  <Component id="jLabel7" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jLabel7" pref="35" max="32767" attributes="0"/>
+                      <Component id="txtcheckout" max="32767" attributes="0"/>
+                  </Group>
                   <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jLabel8" max="32767" attributes="0"/>
@@ -137,14 +138,6 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel2">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Times New Roman" size="18" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Rerservation ID"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -201,23 +194,15 @@
             <Property name="text" type="java.lang.String" value="Room No"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="txtresid">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Times New Roman" size="18" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="33" red="33" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="jLabel10"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JTextField" name="txtname">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="18" style="1"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtnameActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtaddress">
           <Properties>
@@ -232,6 +217,10 @@
               <Font name="Times New Roman" size="18" style="1"/>
             </Property>
           </Properties>
+        </Component>
+        <Component class="com.toedter.calendar.JDateChooser" name="txtcheckin">
+        </Component>
+        <Component class="com.toedter.calendar.JDateChooser" name="txtcheckout">
         </Component>
         <Component class="javax.swing.JComboBox" name="txtroomtype">
           <Properties>
@@ -260,7 +249,19 @@
               <Font name="Times New Roman" size="18" style="1"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="0"/>
+              <StringArray count="11">
+                <StringItem index="0" value="101"/>
+                <StringItem index="1" value="102"/>
+                <StringItem index="2" value="103"/>
+                <StringItem index="3" value="104"/>
+                <StringItem index="4" value="105"/>
+                <StringItem index="5" value="201"/>
+                <StringItem index="6" value="202"/>
+                <StringItem index="7" value="203"/>
+                <StringItem index="8" value="204"/>
+                <StringItem index="9" value="205"/>
+                <StringItem index="10" value=" "/>
+              </StringArray>
             </Property>
           </Properties>
           <AuxValues>
@@ -290,6 +291,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Reserve"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
