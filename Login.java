@@ -163,9 +163,9 @@ public class Login extends javax.swing.JFrame {
 
     private void btnsigninActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsigninActionPerformed
         
-        if(verifyFields()){
+        if(checkFields()){
             PreparedStatement pst;
-        ResultSet rs;
+            ResultSet rs;
         // get username and password
         String username = txtuser.getText();
         String password = String.valueOf(txtpass.getPassword());
@@ -201,11 +201,11 @@ public class Login extends javax.swing.JFrame {
     private void btnsignupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsignupActionPerformed
        
     // to go signup form
-    Signup sup = new Signup();
-    sup.setVisible(true);
-    sup.pack();
-    sup.setLocationRelativeTo(null);
-    sup.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    Signup signup = new Signup();
+    signup.setVisible(true);
+    signup.pack();
+    signup.setLocationRelativeTo(null);
+    signup.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     //close current form
     this.dispose();
         
@@ -231,8 +231,8 @@ public class Login extends javax.swing.JFrame {
        // set button color
         btnsignin.setBackground(new Color(0, 84, 104));
     }//GEN-LAST:event_btnsignupMouseExited
-
-    public boolean verifyFields(){
+// check if the fields are empty
+    public boolean checkFields(){
     if(txtuser.getText().equals("") || txtpass.getText().equals(""))
     {
     JOptionPane.showMessageDialog(null, "One or More Fields are Empty");

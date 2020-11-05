@@ -176,7 +176,7 @@ public class Signup extends javax.swing.JFrame {
         btnregister.setBackground(new java.awt.Color(153, 255, 102));
         btnregister.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         btnregister.setForeground(new java.awt.Color(51, 51, 255));
-        btnregister.setText("Creat User");
+        btnregister.setText("Create User");
         btnregister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnregisterActionPerformed(evt);
@@ -222,9 +222,9 @@ public class Signup extends javax.swing.JFrame {
 
     //Function to check if fields are empty
     
-    public boolean verifyFields(){
+    public boolean checkFields(){
     if(txtfname.getText().equals("") && txtlname.getText().equals("") || txtaddress.getText().equals("") || txtphone.getText().equals("") ||
-      txtemail.getText().equals("") || txtuname.getText().equals("null") || txtpass1.getText().equals(""))
+      txtemail.getText().equals("") || txtuname.getText().equals("") || txtpass1.getText().equals(""))
     {
     JOptionPane.showMessageDialog(null, "One or More Fields are Empty");
         return false;    
@@ -239,7 +239,7 @@ public class Signup extends javax.swing.JFrame {
     else
     return true;
 }
-    // Function to check if Username exist
+    // Function to check if Username already exist
     public boolean isUserExist(String User){
             boolean user_Exist = false;
             Connection con = Connect.getConnection();
@@ -272,7 +272,7 @@ public class Signup extends javax.swing.JFrame {
             String conpassword = txtpass2.getText();
       
             
-            if(verifyFields()){
+            if(checkFields()){
                 
             Connection con = Connect.getConnection();
             PreparedStatement pst;
