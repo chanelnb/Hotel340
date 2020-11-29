@@ -30,7 +30,7 @@ public class MYSQLConnector implements DBConnectorInterface{
     // For standard MySQL Ports.
     //static String host = "jdbc:mysql://localhost:8081/hotelmanagementsystem";
     // For mac users of MAMP using the default MySQL port
-    static String host = "jdbc:mysql://localhost:8081/hotelmanagementsystem";
+    static String host = "jdbc:mysql://localhost:8889/hotelmanagementsystem?useSSL=false&allowPublicKeyRetrieval=true";
     static String user = "root";
     static String password = "";
 
@@ -63,6 +63,10 @@ public class MYSQLConnector implements DBConnectorInterface{
         values+= ")";
         query+= names + values;
         // Execute the query.
+        
+        System.out.println(query);
+        System.exit(0);
+        
         int newKey = this.executeInsert(query);
         if (newKey == -1) {
             System.out.println("Database Error: Could not create new record");

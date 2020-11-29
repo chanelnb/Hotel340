@@ -34,18 +34,29 @@ public class SearchController implements Initializable{
     @FXML
     private Button searchButton;
     
-     private Main main;
+    private Main main;
+    
     public void setMain(Main main) {
         this.main = main;
     }
     
+    public boolean checkFields(){
+        if(checkInDatePicker.getValue() != null || numberOfGuestsField.getText().isEmpty() || checkOutDatePicker.getValue() != null ){
+         
+        }
+        return false;
+    }
+    
     @FXML
     void search(ActionEvent event) {
-
+        if (checkFields()) {
+            
+        }
     }
 
+    
     @Override
-    public void initialize(URL location, ResourceBundle resources) { //To change body of generated methods, choose Tools | Templates.
+    public void initialize(URL location, ResourceBundle resources) {
     }
 
 }

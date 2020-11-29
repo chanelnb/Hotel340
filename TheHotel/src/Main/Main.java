@@ -20,6 +20,8 @@ import javafx.scene.layout.AnchorPane;
 /**
  *
  * @author sogol
+ * @author Chanel
+ * 
  */
 public class Main extends Application {
     

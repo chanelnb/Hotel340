@@ -12,20 +12,36 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * @author ike
+ * @author Chanel Brown
  */
 public abstract class DataObject extends DataFactory {
 
     protected final String dataTable = "";
     protected int id;
     protected String uuid;
-    protected String name;
+    protected String fname;
+    protected String lname;
+    protected String address;
+    protected String phone;
+    protected String email;
+    protected String password;       
+    protected String username;
+    protected String type;
+    protected int roomno;
+    protected String checkin;
+    protected String checkout;
     protected boolean active = true;
 
     public DataObject() {
         this.setUuid(DataObject.generateUuid());
     }
-
+    
+    public DataObject loadByName (String _fname) {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("fname", _fname);
+        return this.loadByCondition(map);
+    }
+    
     public DataObject loadById(int _id) {
         HashMap<String, String> map = new HashMap<>();
         map.put("id", Integer.toString(_id));
@@ -87,9 +103,17 @@ public abstract class DataObject extends DataFactory {
 // ================================ GETTERS ====================================
 
     public String getName() {
-        return this.name;
+        return this.fname;
     }
-
+    
+    public int getRoom() {
+        return this.roomno;
+    }
+    
+    public String getType() {
+        return this.type;
+    }
+    
     public String getUuid() {
         return this.uuid;
     }
@@ -100,10 +124,18 @@ public abstract class DataObject extends DataFactory {
 
 // ================================ SETTERS ====================================
 
-    public void setName(String _name) {
-        this.name = _name;
+    public void setName(String _fname) {
+        this.fname = _fname;
     }
-
+    
+    public void setRoom(int _roomno) {
+        this.roomno = _roomno;
+    }
+    
+    public void setType(String _type) {
+        this.type = _type;
+    }
+    
     public void setUuid(String _uuid) {
         this.uuid = _uuid;
     }
