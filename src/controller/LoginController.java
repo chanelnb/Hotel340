@@ -58,10 +58,10 @@ public class LoginController implements Initializable{
 
     @FXML
     void signsIn(ActionEvent event) throws IOException {
-        if(checkFields()){
-            main.searchWindow();
+       // if(checkFields()){
+            main.homeWindow();
        
-    }
+  //  }
     }
     /**
      * Initializes the controller class.

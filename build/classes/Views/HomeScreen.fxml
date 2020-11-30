@@ -7,9 +7,9 @@
 
 <AnchorPane id="AnchorPane" fx:id="homeScreenAnchorPane" prefHeight="333.0" prefWidth="357.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeScreenController">
    <children>
-      <Button fx:id="homeScreenSearchButton" layoutX="14.0" layoutY="275.0" mnemonicParsing="false" text="Search" />
-      <Button fx:id="homeScreenLogoutButton" layoutX="282.0" layoutY="275.0" mnemonicParsing="false" text="Log Out" />
-      <Button fx:id="homeScreenReservationButton" layoutX="137.0" layoutY="275.0" mnemonicParsing="false" text="Reservation" />
+      <Button fx:id="homeScreenSearchButton" layoutX="14.0" layoutY="275.0" mnemonicParsing="false"  onAction="#goesToSearch" text="Search" />
+      <Button fx:id="homeScreenLogoutButton" layoutX="282.0" layoutY="275.0" mnemonicParsing="false" onAction="#signIn" text="Log Out" />
+      <Button fx:id="homeScreenReservationButton" layoutX="137.0" layoutY="275.0" mnemonicParsing="false" onAction="#goesToReservation" text="Reservation" />
       <ImageView fitHeight="266.0" fitWidth="360.0">
          <image>
             <Image url="@../../../../../../../hotel.jpg" />

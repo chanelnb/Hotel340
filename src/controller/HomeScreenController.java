@@ -5,8 +5,11 @@
  */
 package controller;
 
+import Main.Main;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -26,7 +29,30 @@ public class HomeScreenController implements Initializable {
 
     @FXML
     private Button homeScreenReservationButton;
+    
+    private Main main;
+    
+    
+    //connect main class to controller
+    public void setMain(Main main) {
+        this.main = main;
+        
+    }
 
+     @FXML
+    void goesToSearch(ActionEvent event) throws IOException {   
+        main.searchWindow();
+    }
+    
+     @FXML
+    void signIn(ActionEvent event) throws IOException {   
+        main.loginWindow();
+    }
+    
+     @FXML
+    void goesToReservation(ActionEvent event) throws IOException {   
+        main.reservationWindow();
+    }
     /**
      * Initializes the controller class.
      */

@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
@@ -42,9 +43,15 @@ public class SearchController implements Initializable{
     
     public boolean checkFields(){
         if(checkInDatePicker.getValue() != null || numberOfGuestsField.getText().isEmpty() || checkOutDatePicker.getValue() != null ){
-         
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Warning");
+            alert.setContentText("One or more fields are empty!");
+            alert.showAndWait();
+
+            return false;
         }
-        return false;
+        else
+            return true;
     }
     
     @FXML
