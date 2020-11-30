@@ -9,6 +9,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import Model.Usermodel;
+
 
 public class LoginController implements Initializable{
 
@@ -24,6 +28,13 @@ public class LoginController implements Initializable{
     @FXML
     private Label PasswordLabel;
 
+    @FXML
+    private TextField usernameField;
+
+    @FXML
+    private PasswordField passwordField;
+    
+    
     private Main main;
     
     
@@ -31,6 +42,14 @@ public class LoginController implements Initializable{
     public void setMain(Main main) {
         this.main = main;
         
+    }
+    public boolean checkFields(){
+        if(usernameField.getText().isEmpty() || passwordField.getText().isEmpty()){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
     //when this method is called it goes to sign up page
     @FXML
@@ -40,7 +59,10 @@ public class LoginController implements Initializable{
 
     @FXML
     void signsIn(ActionEvent event) throws IOException {
-        main.searchWindow();
+        if(checkFields()){
+            main.searchWindow();
+       
+    }
     }
     /**
      * Initializes the controller class.
