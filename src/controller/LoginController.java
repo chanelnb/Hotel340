@@ -7,13 +7,13 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-
-public class LoginController implements Initializable{
+public class LoginController implements Initializable {
 
     @FXML
     private Button SignInButton;
@@ -28,49 +28,55 @@ public class LoginController implements Initializable{
     private Label PasswordLabel;
 
     @FXML
-    private TextField usernameField;
+    private PasswordField loginPasswordField;
 
     @FXML
-    private PasswordField passwordField;
-    
-    
+    private TextField loginUsernameField;
+
     private Main main;
-    
-    
+
     //connect main class to controller
     public void setMain(Main main) {
         this.main = main;
-        
+
     }
-    public boolean checkFields(){
-        if(usernameField.getText().isEmpty() || passwordField.getText().isEmpty()){
+
+    public boolean checkFields() {
+        if (loginUsernameField.getText().isEmpty() || loginPasswordField.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Warning");
+            alert.setContentText("One or more fields are empty!");
+            alert.showAndWait();
             return false;
-        }
-        else{
+        } else {
             return true;
         }
     }
+
     //when this method is called it goes to sign up page
     @FXML
-    void goesToSignUp(ActionEvent event) throws IOException {   
+    void goesToSignUp(ActionEvent event) throws IOException {
         main.signUpWindow();
     }
 
     @FXML
     void signsIn(ActionEvent event) throws IOException {
-       // if(checkFields()){
-            main.homeWindow();
-       
-  //  }
+        if (checkFields()) // if everything is ok it will go to home window     
+        {
+            try {
+                main.homeWindow();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
     }
+
     /**
      * Initializes the controller class.
      */
-   
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-      
+
     }
 }
-    
-
