@@ -133,11 +133,7 @@ public class SignupController implements Initializable{
         if(checkFields())
             //goes to login
         try{
-            FXMLLoader loginLoader = new FXMLLoader(getClass().getResource("/Views/login.fxml"));
-            Parent loginParent = (Parent) loginLoader.load();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(loginParent));
-            stage.show();
+            main.loginWindow();
         }
         catch(Exception e){
             e.printStackTrace();
