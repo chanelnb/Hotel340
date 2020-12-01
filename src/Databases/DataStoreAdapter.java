@@ -14,7 +14,7 @@ package Databases;
 import Databases.DBConnectorInterface;
 import Databases.DataFactory;
 import Databases.DataObject;
-import Databases.MYSQLConnector;
+import Database.MySqlConnector;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map; 
@@ -23,7 +23,7 @@ import java.util.logging.Logger;
 
 public class DataStoreAdapter {
 
-    private static final DBConnectorInterface connector = new MYSQLConnector();
+    private static final DBConnectorInterface connector = (DBConnectorInterface) new MySqlConnector();
 
     /**
      * Given a DataObject, this method translates that DataObject into primitive
