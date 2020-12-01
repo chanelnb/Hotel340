@@ -102,9 +102,11 @@ public class ReservationController implements Initializable {
             String name = nameField.getText();
             String address = addressField.getText();
             String phone = phoneNumberField.getText();
+          
             SimpleDateFormat checkin = new SimpleDateFormat("YYYY-MM-DD");
             String StartDate = checkin.format(checkInDatePicker.getValue());
             SimpleDateFormat checkout = new SimpleDateFormat("YYYY-MM-DD");
+
             String EndDate = checkout.format(checkOutDatePicker.getValue());
             String roomtype = roomTypeChoiceBox.getValue().toString();
             String roomno = roomNumberChoiceBox.getValue().toString();
