@@ -12,9 +12,9 @@ package Api;
 public class Apikey {
     
     public static String openApi() {
-        String api_key = "DnsNdm_TOmfnTtxHz1U3Bses0pJCBBJ3bV2pgl89G0qvrYZUGxX1GKrhLMNnYLTeLhc6WuVWqLXUUhK8GOs6PbyJYfo9MR_0WdMcQfe_S_7jfMXL_BzKj3X_s2jFX3Yx";
-        
-        return api_key;
+        String api_key = "AIzaSyCqY9omOXYHy202a64CqUCaxGJ8LeXdEVk";
+        String client_id ="957439086654-dkbegin5qgecqmbq1kmpgrm0dm7mmub4.apps.googleusercontent.com";
+        return api_key; 
     }
     
 }

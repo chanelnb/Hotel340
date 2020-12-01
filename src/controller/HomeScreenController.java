@@ -17,9 +17,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * FXML Controller class
+ * FXML HomeScreenController class
  *
  * @author sogol
+ * @author chanel
+ * 
  */
 public class HomeScreenController implements Initializable {
     

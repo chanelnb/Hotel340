@@ -23,7 +23,10 @@ import javafx.scene.control.TextField;
 
 /**
  *
- * @author cah
+ * @author chanel 
+ * @author amad
+ * @author sogol
+ * 
  */
 public class MySqlConnector {
 

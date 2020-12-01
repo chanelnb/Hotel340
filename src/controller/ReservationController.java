@@ -17,6 +17,13 @@ import java.util.logging.Logger;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ComboBox;
 
+/**
+ * FXML ReservationController class
+ *
+ * @author amad
+ * @author chanel
+ * 
+ */
 public class ReservationController implements Initializable {
   
     @FXML
