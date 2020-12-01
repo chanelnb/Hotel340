@@ -1,11 +1,5 @@
 package controller;
-/**
- *model for users 
- * 
- * last update 12/01/20
- * 
- * @author chanel
- */
+
 import Main.Main;
 import java.io.IOException;
 import java.net.URL;
@@ -16,6 +10,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+/**
+ *model for users 
+ * 
+ * last update 12/01/20
+ * 
+ * @author chanel
+ */
 
 public class HomeScreenController implements Initializable {
     

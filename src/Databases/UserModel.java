@@ -11,7 +11,7 @@ package Databases;
 
 import controller.LoginController;
 
-public class UserModel extends DataObject{
+public class UserModel {
         protected String firstName = "";
         protected String lastName = "";
         protected String address = "";
@@ -20,7 +20,6 @@ public class UserModel extends DataObject{
         protected String username = "";
         protected String password = "";
         protected String passwordConfirmation = "";
-        protected final String dataTable = "user";
 
 
 //===================GETTERS=====================
@@ -31,6 +30,7 @@ public class UserModel extends DataObject{
          * @return the firstName
          */
         public String getFirstName() {
+            
             return firstName;
         }
 
