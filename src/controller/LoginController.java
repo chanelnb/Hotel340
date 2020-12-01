@@ -1,5 +1,12 @@
 package controller;
-
+/**
+ *model for users 
+ * 
+ * last update 11/30/20
+ * 
+ * @author amad
+ * @author chanel
+ */
 import Main.Main;
 import Databases.UserModel;
 import Databases.MySqlConnector;

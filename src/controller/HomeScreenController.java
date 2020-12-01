@@ -1,10 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controller;
-
+/**
+ *model for users 
+ * 
+ * last update 12/01/20
+ * 
+ * @author chanel
+ */
 import Main.Main;
 import java.io.IOException;
 import java.net.URL;
@@ -16,11 +17,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author sogol
- */
 public class HomeScreenController implements Initializable {
     
     private Main main;

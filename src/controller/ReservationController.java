@@ -1,5 +1,12 @@
 package controller;
-
+/**
+ *model for users 
+ * 
+ * last update 12/01/20
+ * 
+ * @author amad
+ * @author chanel
+ */
 import Main.Main;
 import java.net.URL;
 import java.util.ResourceBundle;
