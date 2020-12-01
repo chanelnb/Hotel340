@@ -12,7 +12,10 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -41,17 +44,35 @@ public class HomeScreenController implements Initializable {
 
      @FXML
     void goesToSearch(ActionEvent event) throws IOException {   
-        main.searchWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/Views/search.fxml"));
+                       
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show(); 
     }
     
      @FXML
     void signIn(ActionEvent event) throws IOException {   
-        main.loginWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/Views/login.fxml"));
+                       
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show(); 
     }
     
      @FXML
     void goesToReservation(ActionEvent event) throws IOException {   
-        main.reservationWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/Views/reservation.fxml"));
+                       
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show(); 
     }
     /**
      * Initializes the controller class.

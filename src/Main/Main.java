@@ -42,7 +42,7 @@ public class Main extends Application {
             // view
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource("/Views/login.fxml"));
-            AnchorPane login = (AnchorPane) loader.load();
+            AnchorPane login = (AnchorPane)loader.load();
             
             // controller
             LoginController loginController = loader.getController();

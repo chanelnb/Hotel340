@@ -12,6 +12,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXMLLoader;
@@ -66,7 +67,7 @@ public class MySqlConnector {
                        FXMLLoader fxmlLoader = new FXMLLoader();
                        fxmlLoader.setLocation(getClass().getResource("/Views/HomeScreen.fxml"));
                        
-                       Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+                       Scene scene = new Scene(fxmlLoader.load());
                        Stage stage = new Stage();
                        stage.setScene(scene);
                        stage.show();    
@@ -85,6 +86,7 @@ public class MySqlConnector {
                 Logger.getLogger(MySqlConnector.class.getName()).log(Level.SEVERE, null, ex);
             }
     }
+<<<<<<< Updated upstream
     public boolean isExist(String email) throws IOException{
         String query = "SELECT * FROM `user` WHERE email = ?";
         boolean user_exist = false;
@@ -134,12 +136,28 @@ public class MySqlConnector {
                         try {
                        FXMLLoader fxmlLoader = new FXMLLoader();
                        fxmlLoader.setLocation(getClass().getResource("/Views/login.fxml"));
+=======
+    
+    public void searchBookings(String checkout) {
+        String query = "SELECT rooms.roomno, type FROM rooms, reservation WHERE rooms.roomno = reservation.roomno and checkout < ?";
+            try {
+                pst = getConnection().prepareStatement(query);
+                pst.setString(1,checkout);
+
+                rs = pst.executeQuery();
+                if(rs.next()){
+                    //if rooms available show reservation form
+                   try {
+                       FXMLLoader fxmlLoader = new FXMLLoader();
+                       fxmlLoader.setLocation(getClass().getResource("/Views/reservation.fxml"));
+>>>>>>> Stashed changes
                        
                        Scene scene = new Scene(fxmlLoader.load());
                        Stage stage = new Stage();
                        stage.setScene(scene);
                        stage.show();    
                        
+<<<<<<< Updated upstream
                         } catch (IOException e) {
                        e.printStackTrace();
                    }
@@ -151,5 +169,21 @@ public class MySqlConnector {
         catch (SQLException ex){
                 Logger.getLogger(MySqlConnector.class.getName()).log(Level.SEVERE, null, ex);
             }
+=======
+                   } catch (IOException e) {
+                       e.printStackTrace();
+                   }
+                }else{
+                    // if login unsuccessful show error message
+                   Alert alert = new Alert(Alert.AlertType.WARNING);
+                   alert.setTitle("SORRY");
+                   alert.setContentText("There are no rooms available at this time");
+                   alert.showAndWait();
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(MySqlConnector.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+>>>>>>> Stashed changes
     }
 }

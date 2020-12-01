@@ -73,7 +73,7 @@ public class LoginController implements Initializable {
             String password = loginPasswordField.getText();
            
            mysqlconnector.checkUser(username, password);
-         
+           
         }
 
     }
