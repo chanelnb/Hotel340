@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="homeScreenAnchorPane" prefHeight="333.0" prefWidth="357.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controller.HomeScreenController">
+<AnchorPane id="AnchorPane" fx:id="homeScreenAnchorPane" prefHeight="426.0" prefWidth="446.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeScreenController">
    <children>
-      <Button fx:id="homeScreenSearchButton" layoutX="14.0" layoutY="275.0" mnemonicParsing="false"  onAction="#goesToSearch" text="Search" />
-      <Button fx:id="homeScreenLogoutButton" layoutX="282.0" layoutY="275.0" mnemonicParsing="false" onAction="#signIn" text="Log Out" />
-      <Button fx:id="homeScreenReservationButton" layoutX="137.0" layoutY="275.0" mnemonicParsing="false" onAction="#goesToReservation" text="Reservation" />
-      <ImageView fitHeight="266.0" fitWidth="360.0">
+      <Button fx:id="homeScreenLogoutButton" layoutX="254.0" layoutY="348.0" mnemonicParsing="false" text="Log Out">
+         <font>
+            <Font name="Times New Roman Bold" size="24.0" />
+         </font></Button>
+      <Button fx:id="homeScreenReservationButton" layoutX="71.0" layoutY="348.0" mnemonicParsing="false" text="Reservation">
+         <font>
+            <Font name="Times New Roman Bold" size="24.0" />
+         </font></Button>
+      <ImageView fitHeight="260.0" fitWidth="360.0" layoutX="46.0" layoutY="61.0">
          <image>
             <Image url="@../../../../../../../hotel.jpg" />
          </image>
       </ImageView>
+      <Label layoutX="158.0" layoutY="14.0" text="Home Page" textFill="#0a7fd1">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

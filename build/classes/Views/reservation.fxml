@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="551.0" prefWidth="517.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controller.ReservationController">
+<AnchorPane fx:id="reservationAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="551.0" prefWidth="517.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReservationController">
    <children>
       <Label layoutX="197.0" layoutY="32.0" text="Reservation" textFill="#0a7fd1">
          <font>
@@ -50,7 +50,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Button fx:id="reserveButton" layoutX="305.0" layoutY="472.0" mnemonicParsing="false" text="Reserve ">
+      <Button fx:id="reserveButton" layoutX="172.0" layoutY="474.0" mnemonicParsing="false" text="Reserve ">
          <font>
             <Font name="Times New Roman Bold" size="24.0" />
          </font>
@@ -60,7 +60,12 @@
       <TextField fx:id="phoneNumberField" layoutX="259.0" layoutY="206.0" />
       <DatePicker fx:id="checkInDatePicker" layoutX="261.0" layoutY="254.0" onAction="#checkInDate" prefHeight="25.0" prefWidth="149.0" promptText="Select Date" showWeekNumbers="true" />
       <DatePicker fx:id="checkOutDatePicker" layoutX="263.0" layoutY="304.0" onAction="#checkOutDate" prefHeight="25.0" prefWidth="149.0" promptText="Select Date" />
-      <ChoiceBox fx:id="roomTypeComboBox" layoutX="262.0" layoutY="357.0" prefWidth="150.0" />
-      <ChoiceBox fx:id="roomNumberComboBox" layoutX="263.0" layoutY="416.0" prefWidth="150.0" />
+      <Button fx:id="SearchButton" layoutX="345.0" layoutY="474.0" mnemonicParsing="false" text="Search">
+         <font>
+            <Font name="Times New Roman Bold" size="24.0" />
+         </font>
+      </Button>
+      <ComboBox fx:id="roomTypeComboBox" layoutX="261.0" layoutY="358.0" prefWidth="150.0" />
+      <ComboBox fx:id="roomNumberComboBox" layoutX="263.0" layoutY="407.0" prefWidth="150.0" />
    </children>
 </AnchorPane>

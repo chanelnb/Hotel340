@@ -11,14 +11,14 @@
 
 <AnchorPane id="AnchorPane" fx:id="loginAnchorePane" prefHeight="400.0" prefWidth="493.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
    <children>
-      <Button fx:id="SignInButton" layoutX="226.0" layoutY="330.0" mnemonicParsing="false" onAction="#signsIn" text="Sign in">
+      <Button fx:id="SignInButton" layoutX="180.0" layoutY="323.0" mnemonicParsing="false" onAction="#signsIn" text="Sign in">
          <font>
-            <Font size="14.0" />
+            <Font name="Times New Roman Bold" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="SignUpButton" layoutX="322.0" layoutY="330.0" mnemonicParsing="false" onAction="#goesToSignUp" text="Sign up">
+      <Button fx:id="SignUpButton" layoutX="320.0" layoutY="323.0" mnemonicParsing="false" onAction="#goesToSignUp" text="Sign up">
          <font>
-            <Font size="14.0" />
+            <Font name="Times New Roman Bold" size="24.0" />
          </font>
       </Button>
       <Label fx:id="UsernameLabel" layoutX="90.0" layoutY="186.0" text="Username">
@@ -33,10 +33,15 @@
       </Label>
       <PasswordField fx:id="loginPasswordField" layoutX="246.0" layoutY="253.0" />
       <TextField fx:id="loginUsernameField" layoutX="246.0" layoutY="187.0" />
-      <ImageView fx:id="loginImage" fitHeight="108.0" fitWidth="199.0" layoutX="147.0" layoutY="38.0">
+      <ImageView fx:id="loginImage" fitHeight="108.0" fitWidth="199.0" layoutX="147.0" layoutY="60.0">
          <image>
             <Image url="@../../../../../../../LoginImage.jpg" />
          </image>
       </ImageView>
+      <Label layoutX="211.0" layoutY="14.0" text="Log In" textFill="#0a7fd1">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
