@@ -161,6 +161,7 @@ public class MySqlConnector {
             pst3.setString(1, username);
             rs = pst3.executeQuery();
             while (rs.next()) {
+                // fill in text fiels with pre-existing user info
                 nameField.setText(rs.getString("fname"));
                 addressField.setText(rs.getString("address"));
                 phoneNumberField.setText(rs.getString("phone"));
@@ -181,7 +182,7 @@ public class MySqlConnector {
             pst.setString(2, checkOut);
             pst.setString(3, (String)roomNum.getSelectionModel().getSelectedItem());
 
-            
+            // add reservation to database
             if (pst.executeUpdate() != 0) {
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Confirmation");
