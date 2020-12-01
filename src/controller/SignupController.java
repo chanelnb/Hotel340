@@ -129,7 +129,7 @@ public class SignupController implements Initializable{
            mysqlconnector.isExist(email);
            mysqlconnector.userExist(fname, lname, address, phone, email, username, password);
         }   
-    }
+    } 
     
 
     @Override
