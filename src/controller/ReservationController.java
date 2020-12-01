@@ -54,10 +54,10 @@ public class ReservationController implements Initializable {
     private DatePicker checkOutDatePicker;
 
     @FXML
-    private ChoiceBox<?> roomTypeChoiceBox;
+    private ChoiceBox<?> roomTypeComboBox;
 
     @FXML
-    private ChoiceBox<?> roomNumberChoiceBox;
+    private ChoiceBox<?> roomNumberComboBox;
     
     private Main main;
     public void setMain(Main main) {
