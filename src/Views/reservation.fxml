@@ -60,7 +60,7 @@
       <TextField fx:id="phoneNumberField" layoutX="259.0" layoutY="206.0" />
       <DatePicker fx:id="checkInDatePicker" layoutX="261.0" layoutY="254.0" onAction="#checkInDate" prefHeight="25.0" prefWidth="149.0" promptText="Select Date" showWeekNumbers="true" />
       <DatePicker fx:id="checkOutDatePicker" layoutX="263.0" layoutY="304.0" onAction="#checkOutDate" prefHeight="25.0" prefWidth="149.0" promptText="Select Date" />
-      <ChoiceBox fx:id="roomTypeChoiceBox" layoutX="262.0" layoutY="357.0" prefWidth="150.0" />
-      <ChoiceBox fx:id="roomNumberChoiceBox" layoutX="263.0" layoutY="416.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="roomTypeComboBox" layoutX="262.0" layoutY="357.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="roomNumberComboBox" layoutX="263.0" layoutY="416.0" prefWidth="150.0" />
    </children>
 </AnchorPane>
