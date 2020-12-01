@@ -1,3 +1,10 @@
+/**
+ *model for users 
+ * 
+ * last update 11/30/20
+ * 
+ * @author sogol
+ */
 package controller;
 
 import Databases.MySqlConnector;
@@ -97,7 +104,6 @@ public class SignupController implements Initializable{
            mysqlconnector.userExist(fname, lname, address, phone, email, username, password);
         }   
     } 
-    
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
