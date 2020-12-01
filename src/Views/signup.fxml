@@ -45,9 +45,9 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Button fx:id="createUserButton" layoutX="303.0" layoutY="463.0" mnemonicParsing="false" onAction="#createUser" text="Create User" textFill="#18191a">
+      <Button fx:id="createUserButton" layoutX="264.0" layoutY="454.0" mnemonicParsing="false" onAction="#createUser" text="Create User" textFill="#18191a">
          <font>
-            <Font size="14.0" />
+            <Font name="Times New Roman Bold" size="24.0" />
          </font>
          <effect>
             <ColorAdjust />

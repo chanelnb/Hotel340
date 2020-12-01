@@ -6,11 +6,14 @@
             <file>file:/C:/Users/sogol/Documents/Projects/Hotel340/src/Views/login.fxml</file>
             <file>file:/C:/Users/sogol/Documents/Projects/Hotel340/src/Databases/DataStoreAdapter.java</file>
             <file>file:/C:/Users/sogol/Documents/Projects/Hotel340/src/Views/search.fxml</file>
+            <file>file:/C:/Users/sogol/Documents/Projects/Hotel340/src/Main/Main.java</file>
             <file>file:/C:/Users/sogol/Documents/Projects/Hotel340/src/Views/reservation.fxml</file>
             <file>file:/C:/Users/sogol/Documents/Projects/Hotel340/src/controller/SignupController.java</file>
             <file>file:/C:/Users/sogol/Documents/Projects/Hotel340/src/Views/HomeScreen.fxml</file>
             <file>file:/C:/Users/sogol/Documents/Projects/Hotel340/src/Views/signup.fxml</file>
+            <file>file:/C:/Users/sogol/Documents/Projects/Hotel340/test/Test.java</file>
             <file>file:/C:/Users/sogol/Documents/Projects/Hotel340/src/Database/MySqlConnector.java</file>
+            <file>file:/C:/Users/sogol/Documents/Projects/Hotel340/src/Api/RestaurantApi.java</file>
             <file>file:/C:/Users/sogol/Documents/Projects/Hotel340/src/Databases/DBConnectorInterface.java</file>
         </group>
     </open-files>
