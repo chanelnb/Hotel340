@@ -62,15 +62,11 @@ public class Main extends Application {
     public void signUpWindow() {
         try {
             // view
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("/Views/signup.fxml"));
-            AnchorPane signup = (AnchorPane) loader.load();
-            
-            // controller
-            SignupController signUpController = loader.getController();
-            signUpController.setMain(this);
-            
-            Scene scene = new Scene(signup);    
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("/Views/signup.fxml"));
+                       
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = new Stage();
             stage.setScene(scene);
             stage.show();
             

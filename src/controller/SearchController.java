@@ -3,7 +3,6 @@ package controller;
 import Database.MySqlConnector;
 import Main.Main;
 import java.net.URL;
-import java.sql.Date;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,7 +12,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.util.StringConverter;
 
 public class SearchController implements Initializable{
 

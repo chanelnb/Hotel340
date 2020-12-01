@@ -12,7 +12,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXMLLoader;
@@ -29,6 +28,7 @@ public class MySqlConnector {
     
     
     PreparedStatement pst;
+    PreparedStatement pst2;
     ResultSet rs;
     Stage stage;
     
@@ -40,7 +40,7 @@ public class MySqlConnector {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
             try {
-                con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/hotelmanagementsystem", "root", "");
+                con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/hotelmanagementsystem", "root", "root");
             } catch (SQLException ex) {
                 Logger.getLogger(MySqlConnector.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -86,8 +86,8 @@ public class MySqlConnector {
                 Logger.getLogger(MySqlConnector.class.getName()).log(Level.SEVERE, null, ex);
             }
     }
-<<<<<<< Updated upstream
-    public boolean isExist(String email) throws IOException{
+    
+    public boolean isExist(String email) throws IOException {
         String query = "SELECT * FROM `user` WHERE email = ?";
         boolean user_exist = false;
             try{
@@ -108,35 +108,44 @@ public class MySqlConnector {
     
     public void userExist (String fname, String lname, String address, String phone, String email,String username, String password) throws IOException{
         
-            String query2 = "INSERT into 'user' ('uuid','fname','lname','address','phone','email',username','password') values (?,?,?,?,?,?,?,?)";
+        String query2 = "INSERT into user (uuid, fname, lname, address, phone, email, username, password) values (?,?,?,?,?,?,?,?)";
                     
         try{ 
-            pst = getConnection().prepareStatement(query2);
-            pst.setString(1,DataObject.generateUuid());
-            pst.setString(2,fname);
-            pst.setString(3,lname);
-            pst.setString(4,address);
-            pst.setString(5,phone);
-            pst.setString(6,email);
-            pst.setString(7,username);
-            pst.setString(8,password);
+            pst2 = getConnection().prepareStatement(query2);
+            pst2.setString(1,DataObject.generateUuid());
+            pst2.setString(2,fname);
+            pst2.setString(3,lname);
+            pst2.setString(4,address);
+            pst2.setString(5,phone);
+            pst2.setString(6,email);
+            pst2.setString(7,username);
+            pst2.setString(8,password);
          
                     
-                    if(isExist(email)){
-                         //if user already exists
-                   Alert alert = new Alert(Alert.AlertType.WARNING);
-                   alert.setTitle("Warning");
-                   alert.setContentText("User already exists!");
-                   alert.showAndWait();
-                }
-                    else{
-                        
+            if(isExist(email)){
+                 //if user already exists
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Warning");
+                alert.setContentText("User already exists!");
+                alert.showAndWait();
+            } else {
+                if(pst2.executeUpdate() != 0){
+                    FXMLLoader fxmlLoader = new FXMLLoader();
+                    fxmlLoader.setLocation(getClass().getResource("/Views/login.fxml"));
                     
-                    if(pst.executeUpdate() != 0){
-                        try {
-                       FXMLLoader fxmlLoader = new FXMLLoader();
-                       fxmlLoader.setLocation(getClass().getResource("/Views/login.fxml"));
-=======
+                    Scene scene = new Scene(fxmlLoader.load());
+                    Stage stage = new Stage();
+                    stage.setScene(scene);
+                    stage.show();  
+                  
+                } 
+            } 
+        }
+        catch (SQLException ex) {
+                Logger.getLogger(MySqlConnector.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }
+    
     
     public void searchBookings(String checkout) {
         String query = "SELECT rooms.roomno, type FROM rooms, reservation WHERE rooms.roomno = reservation.roomno and checkout < ?";
@@ -150,30 +159,17 @@ public class MySqlConnector {
                    try {
                        FXMLLoader fxmlLoader = new FXMLLoader();
                        fxmlLoader.setLocation(getClass().getResource("/Views/reservation.fxml"));
->>>>>>> Stashed changes
                        
                        Scene scene = new Scene(fxmlLoader.load());
                        Stage stage = new Stage();
                        stage.setScene(scene);
                        stage.show();    
-                       
-<<<<<<< Updated upstream
-                        } catch (IOException e) {
+
+                    } catch (IOException e) {
                        e.printStackTrace();
-                   }
-                    
-                }
                     }
-             
-    }
-        catch (SQLException ex){
-                Logger.getLogger(MySqlConnector.class.getName()).log(Level.SEVERE, null, ex);
-            }
-=======
-                   } catch (IOException e) {
-                       e.printStackTrace();
-                   }
-                }else{
+                    
+                } else{
                     // if login unsuccessful show error message
                    Alert alert = new Alert(Alert.AlertType.WARNING);
                    alert.setTitle("SORRY");
@@ -183,7 +179,8 @@ public class MySqlConnector {
             } catch (SQLException ex) {
                 Logger.getLogger(MySqlConnector.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
->>>>>>> Stashed changes
+             
     }
+    
+
 }
