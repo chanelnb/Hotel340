@@ -18,7 +18,7 @@ public abstract class DataObject extends DataFactory {
 
     protected final String dataTable = "";
     protected int id;
-    protected String uuid;
+    public String uuid;
     protected boolean active = true;
 
     public DataObject() {
@@ -85,7 +85,7 @@ public abstract class DataObject extends DataFactory {
         this.active = false;
     }
 
-    protected static String generateUuid() {
+    public static String generateUuid() {
         return UUID.randomUUID().toString();
     }
 

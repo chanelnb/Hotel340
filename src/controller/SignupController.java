@@ -1,39 +1,23 @@
 package controller;
 
+import Database.MySqlConnector;
 import Main.Main;
 import Databases.UserModel;
 import java.net.URL;
-import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonBar;
-import javafx.scene.control.ButtonBar.ButtonData;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleButton;
-import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
+import Database.MySqlConnector;
 
 public class SignupController implements Initializable{
 
-    //Creates a file for the stored results text file
-    
-    //creating models 
-    UserModel user = new UserModel();
-    
-    //getting result and pass to database
-    
     
     @FXML
     private Label firstNameLabel;
@@ -89,13 +73,16 @@ public class SignupController implements Initializable{
     @FXML
     private AnchorPane signupAnchorPane;
 
-    
-    @FXML
-    Button signupButton, loginButton;
-    
     private Main main;
+    
+    private MySqlConnector mysqlconnector = new MySqlConnector();
+    
+    private UserModel user;
+
+    //connect main class to controller
     public void setMain(Main main) {
         this.main = main;
+
     }
 
     public boolean checkFields(){
@@ -130,14 +117,18 @@ public class SignupController implements Initializable{
 
     @FXML
     void createUser(ActionEvent event) throws Exception{
-        if(checkFields())
-            //goes to login
-        try{
-            main.loginWindow();
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }
+        if(checkFields()){
+           String fname = firstNameField.getText();
+           String lname = lastNameField.getText();
+           String address = addressField.getText();
+           String phone = phoneNumberField.getText();
+           String email = emailField.getText();
+           String username = usernameField.getText();
+           String password = passwordField.getText();
+           
+           mysqlconnector.isExist(email);
+           mysqlconnector.userExist(fname, lname, address, phone, email, username, password);
+        }   
     }
     
 
