@@ -8,10 +8,13 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class LoginController implements Initializable {
 
@@ -49,8 +52,20 @@ public class LoginController implements Initializable {
 
     //when this method is called it goes to sign up page
     @FXML
-    void goesToSignUp(ActionEvent event) throws IOException {
-        main.signUpWindow();
+    void goesToSignUp(ActionEvent event) throws IOException {   
+        try {
+            // view
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("/Views/signup.fxml"));
+                       
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

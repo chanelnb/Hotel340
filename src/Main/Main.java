@@ -54,23 +54,6 @@ public class Main extends Application {
         }
     }
 
-    // signup window 
-    public void signUpWindow() {
-        try {
-            // view
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("/Views/signup.fxml"));
-                       
-            Scene scene = new Scene(fxmlLoader.load());
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.show();
-            
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-        
     /**
      * @param args the command line arguments
      */

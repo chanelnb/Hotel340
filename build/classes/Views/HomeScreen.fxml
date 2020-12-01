@@ -19,7 +19,7 @@
          </font></Button>
       <ImageView fitHeight="260.0" fitWidth="360.0" layoutX="46.0" layoutY="61.0">
          <image>
-            <Image url="@../../../../../../../hotel.jpg" />
+            <Image url="/Images/hotel.jpg" />
          </image>
       </ImageView>
       <Label layoutX="158.0" layoutY="14.0" text="Home Page" textFill="#0a7fd1">
