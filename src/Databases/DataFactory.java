@@ -46,6 +46,7 @@ public abstract class DataFactory {
             for(Field f : fields) {
                 // Grab the name of this class property.
                 String fieldName = f.getName();
+
                 // Grab the modifiers that describe this property.
                 int mods = f.getModifiers();
                 // Make sure that this field is neither static, public or final.
@@ -57,6 +58,7 @@ public abstract class DataFactory {
                     String fieldValue = (f.get(this).equals(true) ? "1" : "0");
                     pairs.put(fieldName, fieldValue);
                 } else {
+
                     // Grab this field's value and cast it as a string.
                     String fieldValue = f.get(this).toString();
                     // Add the name value pair to the map.

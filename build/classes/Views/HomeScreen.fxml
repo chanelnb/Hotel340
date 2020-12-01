@@ -5,7 +5,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" fx:id="homeScreenAnchorPane" prefHeight="333.0" prefWidth="357.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeScreenController">
+<AnchorPane id="AnchorPane" fx:id="homeScreenAnchorPane" prefHeight="333.0" prefWidth="357.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controller.HomeScreenController">
    <children>
       <Button fx:id="homeScreenSearchButton" layoutX="14.0" layoutY="275.0" mnemonicParsing="false"  onAction="#goesToSearch" text="Search" />
       <Button fx:id="homeScreenLogoutButton" layoutX="282.0" layoutY="275.0" mnemonicParsing="false" onAction="#signIn" text="Log Out" />

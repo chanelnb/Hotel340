@@ -19,26 +19,15 @@ public abstract class DataObject extends DataFactory {
     protected final String dataTable = "";
     protected int id;
     protected String uuid;
-    protected String fname;
-    protected String lname;
-    protected String address;
-    protected String phone;
-    protected String email;
-    protected String password;       
-    protected String username;
-    protected String type;
-    protected int roomno;
-    protected String checkin;
-    protected String checkout;
     protected boolean active = true;
 
     public DataObject() {
         this.setUuid(DataObject.generateUuid());
     }
     
-    public DataObject loadByName (String _fname) {
+    public DataObject loadByName (String _firstName) {
         HashMap<String, String> map = new HashMap<>();
-        map.put("fname", _fname);
+        map.put("firstName", _firstName);
         return this.loadByCondition(map);
     }
     
@@ -102,18 +91,6 @@ public abstract class DataObject extends DataFactory {
 
 // ================================ GETTERS ====================================
 
-    public String getName() {
-        return this.fname;
-    }
-    
-    public int getRoom() {
-        return this.roomno;
-    }
-    
-    public String getType() {
-        return this.type;
-    }
-    
     public String getUuid() {
         return this.uuid;
     }
@@ -124,18 +101,6 @@ public abstract class DataObject extends DataFactory {
 
 // ================================ SETTERS ====================================
 
-    public void setName(String _fname) {
-        this.fname = _fname;
-    }
-    
-    public void setRoom(int _roomno) {
-        this.roomno = _roomno;
-    }
-    
-    public void setType(String _type) {
-        this.type = _type;
-    }
-    
     public void setUuid(String _uuid) {
         this.uuid = _uuid;
     }

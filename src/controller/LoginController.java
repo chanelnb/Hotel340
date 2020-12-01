@@ -1,6 +1,8 @@
 package controller;
 
 import Main.Main;
+import Databases.UserModel;
+import Database.MySqlConnector;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -34,6 +36,10 @@ public class LoginController implements Initializable {
     private TextField loginUsernameField;
 
     private Main main;
+    
+    private MySqlConnector mysqlconnector = new MySqlConnector();
+    
+    private UserModel user;
 
     //connect main class to controller
     public void setMain(Main main) {
@@ -61,13 +67,13 @@ public class LoginController implements Initializable {
 
     @FXML
     void signsIn(ActionEvent event) throws IOException {
-        if (checkFields()) // if everything is ok it will go to home window     
-        {
-            try {
-                main.homeWindow();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        if (checkFields()) { // if everything is ok it will go to home window     
+        
+            String username = loginUsernameField.getText();
+            String password = loginPasswordField.getText();
+           
+           mysqlconnector.checkUser(username, password);
+         
         }
 
     }

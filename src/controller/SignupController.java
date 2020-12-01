@@ -1,7 +1,7 @@
 package controller;
 
 import Main.Main;
-import Model.UserModel;
+import Databases.UserModel;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;

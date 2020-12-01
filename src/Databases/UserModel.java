@@ -1,4 +1,4 @@
-package Model;
+package Databases;
 
 /**
  *model for users 
@@ -7,15 +7,21 @@ package Model;
  * 
  * @author sogol
  */
-public class UserModel{
-        private String firstName;
-        private String lastName;
-        private String address;
-        private int phoneNumber;
-        private String email;
-        private String username;
-        private String password;
-        private String passwordConfirmation;
+
+
+import controller.LoginController;
+
+public class UserModel extends DataObject{
+        protected String firstName = "";
+        protected String lastName = "";
+        protected String address = "";
+        protected int phoneNumber = 1;
+        protected String email = "";
+        protected String username = "";
+        protected String password = "";
+        protected String passwordConfirmation = "";
+        protected final String dataTable = "user";
+
 
 //===================GETTERS=====================
 
@@ -70,6 +76,7 @@ public class UserModel{
          * @return the username
          */
         public String getUsername() {
+            
             return username;
         }
 
@@ -146,6 +153,7 @@ public class UserModel{
          */
         public void setUsername(String _username) {
             this.username = _username;
+            
         }
 
         /**

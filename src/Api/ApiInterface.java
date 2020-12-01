@@ -3,15 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Databases;
+package Api;
 
 /**
  *
  * @author cah
  */
-public class User extends DataObject{
+public class ApiInterface {
     
-    protected final String dataTable = "user";
-    
-    protected int idk = 1;
 }

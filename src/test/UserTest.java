@@ -5,8 +5,8 @@
  */
 package test;
 
-import Databases.User;
-
+import Databases.UserModel;
+import Databases.MYSQLConnector;
 /**
  *
  * @author cah
@@ -15,9 +15,13 @@ public class UserTest {
     
     public static void main(String[] args) throws IllegalArgumentException, IllegalAccessException {
 
-        User users = new User();
-        users.setName("Nel");
+        MYSQLConnector mysqlconnector = new MYSQLConnector();
+        UserModel users = new UserModel();
+        users.setUsername("Nel");
+        users.setPassword("Brown");
         users.save();
+        
+        mysqlconnector.checkUser(users.getUsername(), users.getPassword());
     
     }
     

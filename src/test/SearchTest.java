@@ -12,14 +12,14 @@ import java.lang.reflect.InvocationTargetException;
 /**
  *
  * @author cah
- */
-public class SearchTest {
-    
-    public static void main(String[] args) throws IllegalArgumentException, IllegalAccessException {
-        SearchData search = new SearchData();
-//        search.setType("single");
-        search.setRoom(103);
-        search.save();
-        
-    }
-}
+// */
+//public class SearchTest {
+//    
+//    public static void main(String[] args) throws IllegalArgumentException, IllegalAccessException {
+//        SearchData search = new SearchData();
+////        search.setType("single");
+//        search.setRoom(103);
+//        search.save();
+//        
+//    }
+//}

@@ -5,6 +5,8 @@
  */
 package Model;
 
+import Databases.UserModel;
+
 /**
  *
  * @author sogol

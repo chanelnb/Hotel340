@@ -10,8 +10,13 @@ package Databases;
  * @author iquigley
  */
 
+import Main.Main;
+import controller.LoginController;
+import controller.SearchController;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -20,32 +25,43 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
+import javax.swing.JOptionPane;
+import javafx.stage.Stage;
+
 
 
 public class MYSQLConnector implements DBConnectorInterface{
 
     Connection connection = null;
     Statement statement = null;
+    PreparedStatement pst;
+    ResultSet rs;
+    private Stage stage;
+    Main main;
 
     // For standard MySQL Ports.
     //static String host = "jdbc:mysql://localhost:8081/hotelmanagementsystem";
     // For mac users of MAMP using the default MySQL port
-    static String host = "jdbc:mysql://localhost:8889/hotelmanagementsystem?useSSL=false&allowPublicKeyRetrieval=true";
+    static String host = "jdbc:mysql://127.0.0.1/hotelmanagementsystem";
     static String user = "root";
-    static String password = "";
+    static String password = "root";
 
     public MYSQLConnector() {
         // Initialize the connection at start-up.
         this.connect();
     }
-
-
+    
     /**
      * Generates a MySQL specific string for saving objects to the database.
      * @param _keyValuePairs
      * @param _table
      * @return int
      */
+    
+    
     
     @Override
     public int createObject(Map<String, String> _keyValuePairs, String _table) {
@@ -63,9 +79,6 @@ public class MYSQLConnector implements DBConnectorInterface{
         values+= ")";
         query+= names + values;
         // Execute the query.
-        
-        System.out.println(query);
-        System.exit(0);
         
         int newKey = this.executeInsert(query);
         if (newKey == -1) {
@@ -159,6 +172,34 @@ public class MYSQLConnector implements DBConnectorInterface{
      * @param _deleted whether to load deleted objects.
      * @return
      */
+    public void checkUser(String username,String password) {
+            
+        //select query to check if the username and password exist in the database
+        String query = "SELECT * FROM `user` WHERE username = ? AND password = ?";
+        try {
+            
+            pst.setString(1,username);
+            pst.setString(2,password);
+        
+            rs = pst.executeQuery(query);
+
+            if(rs.next()){
+                //if login successful show a new form
+                System.out.println(username);
+                System.out.println(password);
+            } else{
+                // if login unsuccessful show error message
+               JOptionPane.showMessageDialog(null, "Invalid Username or Password", "Login Error", 2);
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(MYSQLConnector.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+    }      
+         
+    
+    
     public HashMap<String, Object> readObject(Map<String,String> _keyValuePairs, String _table, boolean _deleted) {
         // Start the query.
         String query =  "SELECT * FROM " + _table + " WHERE ";

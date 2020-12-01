@@ -28,7 +28,6 @@ import javafx.scene.layout.AnchorPane;
 public class Main extends Application {
     
     private Stage stage;
-    private AnchorPane signup;
     
     @Override
     public void start(Stage stage) {
@@ -71,7 +70,6 @@ public class Main extends Application {
             SignupController signUpController = loader.getController();
             signUpController.setMain(this);
             
-            //scene on stage
             Scene scene = new Scene(signup);    
             stage.setScene(scene);
             stage.show();
