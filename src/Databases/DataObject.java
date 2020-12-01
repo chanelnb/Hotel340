@@ -18,7 +18,7 @@ public abstract class DataObject extends DataFactory {
 
     protected final String dataTable = "";
     protected int id;
-    public String uuid;
+    public static String uuid;
     protected boolean active = true;
 
     public DataObject() {
@@ -91,8 +91,8 @@ public abstract class DataObject extends DataFactory {
 
 // ================================ GETTERS ====================================
 
-    public String getUuid() {
-        return this.uuid;
+    public static String getUuid() {
+        return DataObject.uuid;
     }
 
     public int getId() {

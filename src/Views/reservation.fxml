@@ -50,7 +50,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Button fx:id="reserveButton" layoutX="172.0" layoutY="474.0" mnemonicParsing="false" text="Reserve ">
+      <Button fx:id="reserveButton" layoutX="172.0" layoutY="474.0" onAction= "#reserveButton" mnemonicParsing="false" text="Reserve ">
          <font>
             <Font name="Times New Roman Bold" size="24.0" />
          </font>
@@ -58,9 +58,9 @@
       <TextField fx:id="nameField" layoutX="259.0" layoutY="102.0" />
       <TextField fx:id="addressField" layoutX="259.0" layoutY="153.0" />
       <TextField fx:id="phoneNumberField" layoutX="259.0" layoutY="206.0" />
-      <DatePicker fx:id="checkInDatePicker" layoutX="261.0" layoutY="254.0" onAction="#checkInDate" prefHeight="25.0" prefWidth="149.0" promptText="Select Date" showWeekNumbers="true" />
-      <DatePicker fx:id="checkOutDatePicker" layoutX="263.0" layoutY="304.0" onAction="#checkOutDate" prefHeight="25.0" prefWidth="149.0" promptText="Select Date" />
-      <Button fx:id="SearchButton" layoutX="345.0" layoutY="474.0" mnemonicParsing="false" text="Search">
+      <DatePicker fx:id="checkInDatePicker" layoutX="261.0" layoutY="254.0" prefHeight="25.0" prefWidth="149.0" promptText="Select Date" showWeekNumbers="true" />
+      <DatePicker fx:id="checkOutDatePicker" layoutX="263.0" layoutY="304.0" prefHeight="25.0" prefWidth="149.0" promptText="Select Date" />
+      <Button fx:id="searchButton" layoutX="345.0" layoutY="474.0" onAction= "#searchButton" mnemonicParsing="false" text="Search">
          <font>
             <Font name="Times New Roman Bold" size="24.0" />
          </font>

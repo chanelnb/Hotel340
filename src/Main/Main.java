@@ -5,11 +5,7 @@
  */
 package Main;
 
-import controller.SignupController;
-import controller.SearchController;
 import controller.LoginController;
-import controller.HomeScreenController;
-import controller.ReservationController;
 import java.io.IOException;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
@@ -74,72 +70,7 @@ public class Main extends Application {
             e.printStackTrace();
         }
     }
-    
-    // search window 
-    public void searchWindow() {
-        try {
-            // view
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("/Views/search.fxml"));
-            AnchorPane search = (AnchorPane) loader.load();
-            
-            // controller
-            SearchController searchController = loader.getController();
-            searchController.setMain(this);
-            
-            //scene on stage
-            Scene scene = new Scene(search);    
-            stage.setScene(scene);
-            stage.show();
-            
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    
-    // home window
-    public void homeWindow() {
-        try {
-            // view
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("/Views/HomeScreen.fxml"));
-            AnchorPane home = (AnchorPane) loader.load();
-            
-            // controller
-            HomeScreenController homeController = loader.getController();
-            homeController.setMain(this);
-            
-            //scene on stage
-            Scene scene = new Scene(home);    
-            stage.setScene(scene);
-            stage.show();
-            
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    
-    // reservation window
-    public void reservationWindow() {
-        try {
-            // view
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource("/Views/reservation.fxml"));
-            AnchorPane reservation = (AnchorPane) loader.load();
-            
-            // controller
-            ReservationController reservationController = loader.getController();
-            reservationController.setMain(this);
-            
-            //scene on stage
-            Scene scene = new Scene(reservation);    
-            stage.setScene(scene);
-            stage.show();
-            
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+        
     /**
      * @param args the command line arguments
      */

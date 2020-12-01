@@ -7,19 +7,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="homeScreenAnchorPane" prefHeight="426.0" prefWidth="446.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeScreenController">
+<AnchorPane id="AnchorPane" fx:id="homeScreenAnchorPane" prefHeight="426.0" prefWidth="446.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controller.HomeScreenController">
    <children>
-      <Button fx:id="homeScreenLogoutButton" layoutX="254.0" layoutY="348.0" mnemonicParsing="false" text="Log Out">
+      <Button fx:id="homeScreenLogoutButton" layoutX="254.0" layoutY="348.0" onAction="#signIn" mnemonicParsing="false" text="Log Out">
          <font>
             <Font name="Times New Roman Bold" size="24.0" />
          </font></Button>
-      <Button fx:id="homeScreenReservationButton" layoutX="71.0" layoutY="348.0" mnemonicParsing="false" text="Reservation">
+      <Button fx:id="homeScreenReservationButton" layoutX="71.0" layoutY="348.0" onAction="#goesToReservation" mnemonicParsing="false" text="Reservation">
          <font>
             <Font name="Times New Roman Bold" size="24.0" />
          </font></Button>
       <ImageView fitHeight="260.0" fitWidth="360.0" layoutX="46.0" layoutY="61.0">
          <image>
-            <Image url="@../../../../../../../hotel.jpg" />
+            <Image url="/Images/hotel.jpg" />
          </image>
       </ImageView>
       <Label layoutX="158.0" layoutY="14.0" text="Home Page" textFill="#0a7fd1">

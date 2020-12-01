@@ -1,6 +1,6 @@
 package controller;
 
-import Database.MySqlConnector;
+import Databases.MySqlConnector;
 import Main.Main;
 import Databases.UserModel;
 import java.net.URL;
@@ -14,34 +14,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import Database.MySqlConnector;
+import Databases.MySqlConnector;
 
 public class SignupController implements Initializable{
-
-    
-    @FXML
-    private Label firstNameLabel;
-
-    @FXML
-    private Label lastNameLabel;
-
-    @FXML
-    private Label addressLabel;
-
-    @FXML
-    private Label phoneNumberLabel;
-
-    @FXML
-    private Label emailLabel;
-
-    @FXML
-    private Label usernameLabel;
-
-    @FXML
-    private Label passwordLabel;
-
-    @FXML
-    private Button createUserButton;
 
     @FXML
     private TextField firstNameField;
@@ -66,12 +41,6 @@ public class SignupController implements Initializable{
 
     @FXML
     private PasswordField passwordConfirmationField;
-
-    @FXML
-    private Label passwordConfirmationLabel;
-    
-    @FXML
-    private AnchorPane signupAnchorPane;
 
     private Main main;
     
@@ -108,12 +77,6 @@ public class SignupController implements Initializable{
         else
             return true;
     }
-    
-//    public boolean userExist(){
-//        //waiting for connector
-//        
-//        return false;
-//    }
 
     @FXML
     void createUser(ActionEvent event) throws Exception{

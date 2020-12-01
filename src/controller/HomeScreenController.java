@@ -14,7 +14,6 @@ import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 /**
@@ -24,15 +23,6 @@ import javafx.stage.Stage;
  */
 public class HomeScreenController implements Initializable {
     
-    @FXML
-    private Button homeScreenSearchButton;
-
-    @FXML
-    private Button homeScreenLogoutButton;
-
-    @FXML
-    private Button homeScreenReservationButton;
-    
     private Main main;
     
     
@@ -40,17 +30,6 @@ public class HomeScreenController implements Initializable {
     public void setMain(Main main) {
         this.main = main;
         
-    }
-
-     @FXML
-    void goesToSearch(ActionEvent event) throws IOException {   
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("/Views/search.fxml"));
-                       
-        Scene scene = new Scene(fxmlLoader.load());
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.show(); 
     }
     
      @FXML

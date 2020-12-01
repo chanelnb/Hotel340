@@ -35,7 +35,7 @@
       <TextField fx:id="loginUsernameField" layoutX="246.0" layoutY="187.0" />
       <ImageView fx:id="loginImage" fitHeight="108.0" fitWidth="199.0" layoutX="147.0" layoutY="60.0">
          <image>
-            <Image url="@../../../../../../../LoginImage.jpg" />
+            <Image url="/Images/LoginImage.jpg" />
          </image>
       </ImageView>
       <Label layoutX="211.0" layoutY="14.0" text="Log In" textFill="#0a7fd1">
