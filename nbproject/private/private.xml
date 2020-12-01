@@ -3,12 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/sogol/Downloads/Hotel340-master/Hotel340-master/TheHotel/Hotel340/TheHotel/src/controller/SignupController.java</file>
-            <file>file:/C:/Users/sogol/Downloads/Hotel340-master/Hotel340-master/TheHotel/Hotel340/TheHotel/src/controller/LoginController.java</file>
-            <file>file:/C:/Users/sogol/Downloads/Hotel340-master/Hotel340-master/TheHotel/Hotel340/TheHotel/src/Model/UserModel.java</file>
-            <file>file:/C:/Users/sogol/Downloads/Hotel340-master/Hotel340-master/TheHotel/Hotel340/TheHotel/src/Model/HotelInfo.java</file>
-            <file>file:/C:/Users/sogol/Downloads/Hotel340-master/Hotel340-master/TheHotel/Hotel340/TheHotel/src/Model/ReservationModel.java</file>
-            <file>file:/C:/Users/sogol/Downloads/Hotel340-master/Hotel340-master/TheHotel/Hotel340/TheHotel/src/Main/Main.java</file>
+            <file>file:/C:/Users/sogol/Documents/Projects/Hotel340/src/Images/Welcome.jpg</file>
+            <file>file:/C:/Users/sogol/Documents/Projects/Hotel340/src/Main/Main.java</file>
+            <file>file:/C:/Users/sogol/Documents/Projects/Hotel340/src/test/UserTest.java</file>
+            <file>file:/C:/Users/sogol/Documents/Projects/Hotel340/src/controller/SearchController.java</file>
+            <file>file:/C:/Users/sogol/Documents/Projects/Hotel340/src/Views/HomeScreen.fxml</file>
+            <file>file:/C:/Users/sogol/Documents/Projects/Hotel340/src/controller/ReservationController.java</file>
+            <file>file:/C:/Users/sogol/Documents/Projects/Hotel340/src/test/SearchTest.java</file>
+            <file>file:/C:/Users/sogol/Documents/Projects/Hotel340/src/controller/LoginController.java</file>
+            <file>file:/C:/Users/sogol/Documents/Projects/Hotel340/src/Model/HotelInfo.java</file>
+            <file>file:/C:/Users/sogol/Documents/Projects/Hotel340/src/Model/UserModel.java</file>
+            <file>file:/C:/Users/sogol/Documents/Projects/Hotel340/src/controller/HomeScreenController.java</file>
+            <file>file:/C:/Users/sogol/Documents/Projects/Hotel340/src/Model/ReservationModel.java</file>
+            <file>file:/C:/Users/sogol/Documents/Projects/Hotel340/src/Views/reservation.fxml</file>
+            <file>file:/C:/Users/sogol/Documents/Projects/Hotel340/src/controller/SignupController.java</file>
         </group>
     </open-files>
 </project-private>

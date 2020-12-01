@@ -3,7 +3,7 @@ package Databases;
 /**
  *model for users 
  * 
- * last update 11/15/20
+ * last update 11/30/20
  * 
  * @author sogol
  */
