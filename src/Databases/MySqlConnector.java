@@ -45,7 +45,7 @@ public class MySqlConnector {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             try {
-                con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/hotelmanagementsystem", "root", "");
+                con = DriverManager.getConnection("jdbc:mysql://127.0.0.1/hotelmanagementsystem", "root", "root");
             } catch (SQLException ex) {
                 Logger.getLogger(MySqlConnector.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -55,6 +55,9 @@ public class MySqlConnector {
         }
         return con;
 
+    }
+
+    public MySqlConnector() {
     }
 
     public void checkUser(String username, String password) throws IOException {

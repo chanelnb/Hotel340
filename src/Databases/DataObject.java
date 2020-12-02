@@ -10,26 +10,46 @@ import java.util.UUID;
 /**
  * @author Chanel Brown
  */
-public abstract class DataObject{
+public abstract class DataObject extends DataFactory {
 
-    public static String uuid;
+    protected final String dataTable = "";
+    protected int id;
+    protected String uuid;
+    protected boolean active = true;
 
+    public DataObject() {
+        this.setUuid(DataObject.generateUuid());
+    }
+    public void makeActive() {
+        this.active = true;
+    }
 
-    public static String generateUuid() {
+    public void makeInactive() {
+        this.active = false;
+    }
+
+    protected static String generateUuid() {
         return UUID.randomUUID().toString();
     }
 
 // ================================ GETTERS ====================================
-
-    public static String getUuid() {
-        return DataObject.uuid;
+  
+    public String getUuid() {
+        return this.uuid;
     }
 
+    public int getId() {
+        return this.id;
+    }
 
 // ================================ SETTERS ====================================
 
     public void setUuid(String _uuid) {
         this.uuid = _uuid;
+    }
+
+    public void setId(int _id) {
+        this.id = _id;
     }
 
 }

@@ -9,9 +9,7 @@ package Databases;
  */
 
 
-import controller.LoginController;
-
-public class UserModel {
+public class UserModel extends DataObject {
         protected String firstName = "";
         protected String lastName = "";
         protected String address = "";
@@ -29,8 +27,7 @@ public class UserModel {
          * 
          * @return the firstName
          */
-        public String getFirstName() {
-            
+        public String getFirstName() {    
             return firstName;
         }
 

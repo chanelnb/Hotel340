@@ -59,7 +59,7 @@ public class ReservationController implements Initializable {
     ObservableList type;
     ObservableList roomno;
     
-    private MySqlConnector mysqlconnector = new MySqlConnector();
+    private final MySqlConnector mysqlconnector = new MySqlConnector();
     
     
     public void setMain(Main main) throws IOException {
@@ -69,6 +69,20 @@ public class ReservationController implements Initializable {
 
     public boolean checkFields() {
         if (nameField.getText().isEmpty() || addressField.getText().isEmpty() || phoneNumberField.getText().isEmpty() || checkInDatePicker.getValue() == null || checkOutDatePicker.getValue() == null) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Warning");
+            alert.setContentText("One or more fields are empty!");
+            alert.showAndWait();
+
+            return false;
+        } else {
+            return true;
+        }
+    }
+    
+    public boolean checkFields2() {
+        if (nameField.getText().isEmpty() || addressField.getText().isEmpty() || phoneNumberField.getText().isEmpty() || checkInDatePicker.getValue() == null || checkOutDatePicker.getValue() == null 
+                || roomNumberComboBox.getSelectionModel().getSelectedItem() == null || roomTypeComboBox.getSelectionModel().getSelectedItem() == null) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Warning");
             alert.setContentText("One or more fields are empty!");
@@ -97,10 +111,7 @@ public class ReservationController implements Initializable {
     
     @FXML
     void reserveButton(ActionEvent event) throws IOException {
-        if (checkFields()) {   
-            String name = nameField.getText();
-            String address = addressField.getText();
-            String phone = phoneNumberField.getText();
+        if (checkFields2()) {   
             String checkin = checkInDatePicker.getValue().toString();
             String checkout = checkOutDatePicker.getValue().toString();
             
@@ -111,8 +122,8 @@ public class ReservationController implements Initializable {
     
     void FillForm() throws IOException {
     
-    String username = LoginController.username;
-    mysqlconnector.fillFields(username, nameField, addressField, phoneNumberField);
+        String username = LoginController.username;
+        mysqlconnector.fillFields(username, nameField, addressField, phoneNumberField);
     
     
     }
